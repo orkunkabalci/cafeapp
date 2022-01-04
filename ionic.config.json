@@ -1,0 +1,7 @@
+{
+  "name": "cafeapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
