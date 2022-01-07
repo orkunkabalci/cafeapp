@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-spinner *ngIf="loading" class="spinner-center-page" name="crescent"></ion-spinner>
+  <div *ngIf="loading===false" >
+
+  <div class="header">
+    <h4> Welcome {{user?.name |titlecase}} </h4>
+    <ion-icon (click)="openmodal()" name="qr-code-outline"></ion-icon>
+  </div>
+  <div class="userpuan">
+    <p class="cpuan"> Current Puan:{{user?. current_puan}} </p>
+    <ion-icon class="star" name="star-outline"></ion-icon>
+    <span class="reward">
+      <h4 class="rdrink"> {{reward}} Reward Drink</h4>
+      <ion-icon *ngFor="let item of counter(reward)" class="coffee" name="cafe-outline"></ion-icon>
+
+    </span>
+  </div>
+
+  <div class="ads" *ngFor="let ads of ads">
+    <img [src]="ads.image">
+    <div class="info">
+
+    <h3>
+      {{ads.name}}
+    </h3>
+    <p class="desc" >  {{ads.description}} </p>
+    <p class="date">  {{ads.date |date:'shortDate'}}  </p>
+    </div>
+  </div>
+</div>
+
+</ion-content>

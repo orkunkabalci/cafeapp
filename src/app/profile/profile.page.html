@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="loading" class="spinner-center-page" name="crescent"></ion-spinner>
+  <div *ngIf="loading===false">
+    <img [src]="user?.image">
+
+    <span class="puans">
+      <span>
+        <p>
+          Total Puan
+        </p>
+        <p>
+          {{ user?.total_puan}}
+        </p>
+      </span>
+      <span>
+        <p> Current Puan
+        </p>
+        <p>{{user?.current_puan}}</p>
+      </span>
+    </span>
+
+    <ion-item>
+      Name: {{user?.name|titlecase}}
+    </ion-item>
+    <ion-item>
+      Surname: {{user?.surname|titlecase}}
+    </ion-item>
+    <ion-item>
+      Email:{{user?.email}}
+    </ion-item>
+    <ion-item>
+      Phone number: {{user?.phone_number}}
+    </ion-item>
+    <ion-item  [routerLink]="[ '../../history' ]" >
+      History
+    </ion-item>
+  </div>
+</ion-content>

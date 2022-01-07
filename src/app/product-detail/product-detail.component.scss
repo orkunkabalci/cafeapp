@@ -1,0 +1,39 @@
+:host {
+  div {
+    .close {
+      font-size: 35px;
+      margin-top: 5px;
+      margin-left: 5px;
+      position: absolute;
+      z-index: 2;
+    }
+    img {
+      width: 100%;
+      display: block;
+      position: absolute;
+      height: 400px;
+      object-fit: cover;
+    }
+    div {
+      
+      position: absolute;
+      margin: 425px 25px 5px 25px;
+      .price {
+        text-align: end;
+        font-weight: bold;
+      }
+      h3{
+        font-weight: bold;
+      }
+    }
+  }
+
+  .fav {
+    font-size: 30px;
+    right: 0;
+    position: absolute;
+  }
+  .active {
+    color: red;
+  }
+}

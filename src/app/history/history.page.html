@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let item of history">
+    <span class="store">
+      <p class="title">Store</p>
+      <p> {{item?.branches.name}} </p>
+    </span>
+    
+    <span class="puan">
+      <p class="title">Earned Puan</p>
+      <p> {{item?.earned_puan}}<ion-icon name="star-outline"></ion-icon> </p>
+    </span>
+    <span>
+      <p class="title">Date</p>
+      <p> {{item?.date|date:'short'}} </p>
+    </span>
+
+  </ion-item>
+</ion-content>

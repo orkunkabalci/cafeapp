@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Stores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="loading" class="spinner-center-page" name="crescent"></ion-spinner>
+  <div *ngIf="loading===false">
+
+    <div *ngFor="let store of stores;let i=index">
+      <ion-segment value="info" (ionChange)="segmentChanged($event.target['value'],i)">
+        <ion-segment-button value="info">
+          <ion-label>
+            <p>
+              Info
+            </p>
+            <ion-icon name="information-circle-outline"></ion-icon>
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="gallery">
+          <ion-label>
+            <p>
+              Gallery
+            </p>
+            <ion-icon name="image-outline"></ion-icon>
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="map">
+          <ion-label>
+            <p>
+              Map
+            </p>
+            <ion-icon name="map-outline"></ion-icon>
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <div class="storeinfos">
+        <div class="info" *ngIf="activeStoresSegment[i].segment==='info' && activeStoresSegment[i].id===store._id">
+            <h3> {{store.name|titlecase}} </h3>
+            <p> Contact Us</p>
+            <p> Address: {{store.adress|titlecase}} </p>
+            <a href="tel:{{store.phone_number}}">
+              <p class="phone">
+                Phone Number: {{store.phone_number}}
+              </p>
+            </a>
+            <span class="status">
+              <p>Status</p>
+              <ion-icon *ngIf="store.status===true" name="checkmark-done-outline"></ion-icon>
+              <ion-icon *ngIf="store.status===false" name="close-outline"></ion-icon>
+            </span> 
+        </div>
+        <div *ngIf="activeStoresSegment[i].segment==='gallery' && activeStoresSegment[i].id===store._id">
+          <img [src]="store.image">
+        </div>
+        <div *ngIf="activeStoresSegment[i].segment==='map' && activeStoresSegment[i].id===store._id" class="map">
+          <spica-map-iframe [data]="store?.location"></spica-map-iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

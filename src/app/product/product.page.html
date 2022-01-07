@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{products[0]?.category[0].name|titlecase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="products">
+    <div *ngFor="let product of products" class="product">
+      <ion-label (click)="openmodal(product._id)" > 
+        <img [src]="product?.image">
+        <p> {{product?.name|titlecase}} </p>
+      </ion-label>
+    </div>
+  </div>
+
+</ion-content>

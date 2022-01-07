@@ -1,0 +1,26 @@
+:host{
+    .products {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        .product {
+          width: 50%;
+          height: 200px;
+          margin-right: 0;
+          img {
+            margin: auto;
+            width: 60%;
+            height: 60%;
+            display: block;
+            border-radius: 50%;
+          }
+          p {
+            width: 85%;
+            color: black;
+            margin: 13px auto auto auto;
+            text-align: center;
+            font-size:larger;
+          }
+        }
+      }
+}

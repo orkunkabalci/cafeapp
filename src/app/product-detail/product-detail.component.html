@@ -1,0 +1,15 @@
+<ion-spinner *ngIf="loading" class="spinner-center-page" name="crescent"></ion-spinner>
+
+
+<div *ngIf="loading===false">
+  <ion-icon class="close" (click)="dismiss()" name="close"></ion-icon>
+
+  <img [src]="product?.image">
+  <div>
+    <h3> {{product?.name|titlecase}} </h3>
+    <p> {{product?.description}} </p>
+    <p class="price"> Price: {{product?.price}} £ </p>
+    <ion-icon (click)="favaction()" [class.active]="fav" class="fav" name="heart"></ion-icon>
+
+  </div>
+</div>

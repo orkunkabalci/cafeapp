@@ -1,0 +1,23 @@
+:host{
+    img{
+        display: block;
+        width: 50%;
+        margin:15px auto 15px auto;
+        border-radius: 50%;
+        height: 220px;
+        object-fit: cover;
+    }
+    .puans{
+        display: flex;
+        span{
+            border-radius: 15px;
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+            p{
+                text-align: center;
+                
+            }
+        }
+    }
+}
